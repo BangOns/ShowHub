@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+
+  background-color: #f8f8f8;
+}
+.navBar {
+  width: 100%;
+  display: flex;
+  padding-top: 43px;
+  padding-left: 37px;
+  padding-bottom: 69px;
+  padding-right: 29px;
+  position: fixed;
+}
+.ShowHub {
+  width: 15%;
+}
+.textShowHub {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.ShowHub > .textShowHub a {
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 700;
+}
+.attr {
+  width: 35%;
+}
+.list {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.movies > a,
+.series > a,
+.contact > a,
+.AboutUs > a {
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.movies > a:hover,
+.series > a:hover,
+.contact > a:hover,
+.AboutUs > a:hover {
+  cursor: pointer;
+}
+.search {
+  width: 27%;
+  display: flex;
+  justify-content: flex-end;
+}
+.kotakSearch {
+  width: 89%;
+  height: 37px;
+  background-color: #ffccfd;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.input {
+  width: 90%;
+  height: 100%;
+}
+.input > input {
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.input > input::placeholder {
+  color: #ffffff;
+}
+.iconSearch {
+  width: 9%;
+}
+.iconSearch > a > img {
+  width: 14px;
+  height: 14px;
+}
+.Auth {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.signIn > a,
+.signUp > a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.signUp > a {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+}
+.signIn > a:hover,
+.signUp > a:hover {
+  cursor: pointer;
+}
+.burgerNav {
+  width: 20px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  align-self: center;
+  z-index: 111;
+  transition: all 0.2s ease;
+}
+.burgerNav:hover {
+  cursor: pointer;
+}
+.span {
+  background-color: black;
+  width: 20px;
+  height: 3px;
+  border-radius: 9px;
+}
+.listBurgerNav {
+  transform: translateY(-500px);
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #ff66fa;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.thisList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: space-around;
+}
+.Listmovies > a,
+.Listseries > a,
+.Listcontact > a,
+.ListAboutUs > a,
+.ListsignIn > a,
+.ListsignUp > a {
+  font-weight: 400;
+  width: 100%;
+
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.active {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.activeList {
+  transform: translateY(0px);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1024px) {
+  .movies > a,
+  .series > a,
+  .contact > a,
+  .AboutUs > a {
+    font-size: 15px;
+  }
+  .signIn > a,
+  .signUp > a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 924px) {
+  .attr,
+  .Auth {
+    display: none;
+  }
+
+  .navBar {
+    justify-content: space-between;
+  }
+  .ShowHub {
+    width: 10%;
+  }
+  .search {
+    width: 50%;
+    justify-content: center;
+  }
+  .burgerNav {
+    display: flex;
+  }
+}
+@media screen and (max-width: 524px) {
+  .navBar {
+    padding-left: 19px;
+  }
+  .ShowHub {
+    width: 90%;
+    position: absolute;
+    top: 10px;
+  }
+  .textShowHub {
+    justify-content: center;
+  }
+  .ShowHub > .textShowHub a {
+    font-size: 20px;
+  }
+  .search {
+    width: 90%;
+  }
+  .kotakSearch {
+    width: 90%;
+  }
+}
