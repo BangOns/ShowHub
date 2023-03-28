@@ -9,17 +9,20 @@
 html,
 body {
   scroll-behavior: smooth;
-
+  overflow-x: hidden;
   background-color: #f8f8f8;
 }
 .navBar {
+  background-color: #f8f8f8;
+
   width: 100%;
   display: flex;
   padding-top: 43px;
   padding-left: 37px;
-  padding-bottom: 69px;
+  padding-bottom: 39px;
   padding-right: 29px;
   position: fixed;
+  z-index: 9999999;
 }
 .ShowHub {
   width: 15%;
@@ -181,6 +184,117 @@ body {
   transform: translateY(0px);
   transition: all 0.3s ease;
 }
+.header {
+  width: 100%;
+  position: relative;
+  position: absolute;
+  top: 141px;
+  right: -60px;
+  box-sizing: border-box;
+}
+.backgroundheader {
+  width: 93%;
+  height: 700px;
+  background: linear-gradient(
+    135deg,
+    #ca26ff 7.17%,
+    #f4cac0 85.48%,
+    #fff3b0 100%
+  );
+  border-radius: 20px 20px 300px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.TextHeader {
+  width: 65%;
+  height: 100%;
+  padding: 20px;
+}
+.text1,
+.text2 {
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+.article {
+  width: 80%;
+  height: 40%;
+  position: relative;
+}
+.article > p {
+  position: absolute;
+  font-weight: 700;
+  font-size: 20px;
+  left: 80px;
+  letter-spacing: 0.015em;
+  line-height: 149.5%;
+  color: white;
+}
+.text1 > h1 {
+  position: absolute;
+  font-weight: 700;
+  left: 65px;
+  top: 54px;
+  font-size: 60px;
+}
+.text2 > h2 {
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  left: 55px;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 0.395em;
+}
+.buttonheader {
+  width: 85%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.ButtonStart {
+  width: 200px;
+  height: 63px;
+  color: white;
+  background-color: black;
+  border-radius: 35px;
+}
+.ButtonStart:hover {
+  cursor: pointer;
+}
+.ButtonStart > p {
+  font-size: 22px;
+  letter-spacing: 0.015em;
+  color: #ffccfd;
+  font-weight: 700;
+}
+.ImageHeader {
+  width: 40%;
+  position: relative;
+}
+.thisImage {
+  width: 100%;
+  position: absolute;
+  right: -50px;
+  bottom: 10px;
+  animation-name: animasi;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  z-index: 111;
+}
+.thisImage > img {
+  width: 552px;
+  height: 532px;
+}
+@media screen and (max-width: 1350px) {
+  .thisImage {
+    right: 70px;
+  }
+  .thisImage > img {
+    width: 442px;
+    height: 422px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .movies > a,
   .series > a,
@@ -191,6 +305,61 @@ body {
   .signIn > a,
   .signUp > a {
     font-size: 15px;
+  }
+  .header {
+    right: -30px;
+  }
+  .backgroundheader {
+    flex-direction: column-reverse;
+    border-radius: 20px 20px 20px 20px;
+  }
+  .ImageHeader {
+    height: 50%;
+    width: 100%;
+  }
+  .thisImage {
+    height: 100%;
+    position: relative;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .thisImage > img {
+    width: 302px;
+    height: 302px;
+  }
+  .TextHeader {
+    height: 50%;
+    width: 100%;
+  }
+  .article {
+    display: none;
+  }
+  .text1 > h1 {
+    position: relative;
+    font-weight: 700;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  .text2 > h2 {
+    position: relative;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+  }
+  .text2 {
+    margin-bottom: 20px;
+  }
+  .buttonheader {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 924px) {
@@ -213,6 +382,31 @@ body {
     display: flex;
   }
 }
+@media screen and (max-width: 624px) {
+  .header {
+    right: -20px;
+  }
+  .backgroundheader {
+    height: 500px;
+  }
+  .thisImage > img {
+    width: 232px;
+    height: 232px;
+  }
+  .text1 > h1 {
+    font-size: 40px;
+  }
+  .text2 > h2 {
+    font-size: 29px;
+  }
+  .ButtonStart {
+    width: 120px;
+    height: 43px;
+  }
+  .ButtonStart > p {
+    font-size: 15px;
+  }
+}
 @media screen and (max-width: 524px) {
   .navBar {
     padding-left: 19px;
@@ -233,5 +427,27 @@ body {
   }
   .kotakSearch {
     width: 90%;
+  }
+}
+@media screen and (max-width: 454px) {
+  .header {
+    right: -13px;
+  }
+  .text1 > h1 {
+    font-size: 34px;
+  }
+  .text2 > h2 {
+    font-size: 20px;
+  }
+}
+@keyframes animasi {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

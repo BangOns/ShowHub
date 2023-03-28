@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShowHub</title>
     <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/main_footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navBar">
       <div class="ShowHub">
         <div class="textShowHub">
@@ -76,6 +82,70 @@
         </div>
       </div>
     </nav>
-    <script src="./src/js/index.js"></script>
+    <!-- Header -->
+    <div class="header">
+      <div class="backgroundheader">
+        <div class="TextHeader">
+          <div class="text1">
+            <h1>Hanya Film</h1>
+          </div>
+          <div class="text2">
+            <h2>enjoy watching</h2>
+          </div>
+          <div class="article">
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+              erat volutpat. Ut wisi enimad minim veniam, quis nostrud exerci
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+            </p>
+          </div>
+          <div class="buttonheader">
+            <button type="button" class="ButtonStart"><p>Start Now</p></button>
+          </div>
+        </div>
+        <div class="ImageHeader">
+          <div class="thisImage">
+            <img src="./src/img/humanMovie.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top In  2023 -->
+    <main class="main1">
+      <div class="textTopIn2023">
+        <p>Top In 2023</p>
+      </div>
+      <div class="listFilm mySwiper">
+        <div class="thisFilm swiper-wrapper">
+          <div class="Film">
+            <div class="imgFilm">
+              <img src="./src/img/exampleimage.png" alt="" />
+            </div>
+            <div class="nameFilm">
+              <p>Smile</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </main>
   </body>
+  <script src="./src/js/index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper("mySwiper", {
+      // Optional parameters
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+    });
+  </script>
 </html>

@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "swiper": "^9.1.1"
+  },
+  "name": "skripsi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BangOns/ShowHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ILC",
+  "bugs": {
+    "url": "https://github.com/BangOns/ShowHub/issues"
+  },
+  "homepage": "https://github.com/BangOns/ShowHub#readme",
+  "description": ""
+}
