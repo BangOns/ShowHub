@@ -1,0 +1,84 @@
+.main1 {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  position: absolute;
+  top: 750px;
+  margin-top: 130px;
+}
+.textTopIn2023 {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.textTopIn2023::before {
+  content: "";
+  display: block;
+  width: 50px;
+  background-color: black;
+  margin-top: 5px;
+  margin-right: 7px;
+  height: 1.7px;
+}
+.textTopIn2023::after {
+  content: "";
+  display: block;
+  width: 83%;
+  background-color: black;
+  margin-top: 5px;
+
+  height: 1.7px;
+}
+.textTopIn2023 > p {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.125em;
+  padding: 10px;
+}
+.listFilm {
+  width: 100%;
+  height: 370px;
+}
+.thisFilm {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 20px 6px 98px -21px rgba(0, 0, 0, 0.09);
+  border: 1px solid #f7f7f7;
+  display: flex;
+  gap: 60px;
+  overflow: auto;
+}
+.Film {
+  width: 200px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.imgFilm > img {
+  width: 190px;
+  height: 280px;
+  border-radius: 20px;
+}
+.nameFilm {
+  width: 180px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #330031;
+  color: white;
+  border-radius: 35px;
+}
+.nameFilm > p {
+  font-size: 12px;
+  text-align: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 111;
+}
