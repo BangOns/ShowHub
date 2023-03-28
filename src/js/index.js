@@ -18,20 +18,20 @@ const data = async () => {
   return ress;
 };
 
-// const renderData = async () => {
-//   let response = await data();
-//   let html = "";
-//   response.results.forEach((res) => {
-//     let MyFilm = `<div class="Film">
-//   <div class="imgFilm">
-//     <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
-//   </div>
-//   <div class="nameFilm">
-//     <p>${res.original_title}</p>
-//   </div>
-// </div>`;
-//     html += MyFilm;
-//   });
-//   ListFilm.innerHTML = html;
-// };
-// renderData();
+const renderData = async () => {
+  let response = await data();
+  let html = "";
+  response.results.forEach((res) => {
+    let MyFilm = `<div class="Film">
+  <div class="imgFilm">
+    <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
+  </div>
+  <div class="nameFilm">
+    <p>${res.original_title}</p>
+  </div>
+</div>`;
+    html += MyFilm;
+  });
+  ListFilm.innerHTML = html;
+};
+renderData();
