@@ -117,16 +117,7 @@
         <p>Top In 2023</p>
       </div>
       <div class="listFilm mySwiper">
-        <div class="thisFilm swiper-wrapper">
-          <div class="Film">
-            <div class="imgFilm">
-              <img src="./src/img/exampleimage.png" alt="" />
-            </div>
-            <div class="nameFilm">
-              <p>Smile</p>
-            </div>
-          </div>
-        </div>
+        <div class="thisFilm swiper-wrapper"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
@@ -137,15 +128,18 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper("mySwiper", {
-      // Optional parameters
-
-      // Navigation arrows
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-
-      // And if we need scrollbar
     });
   </script>
 </html>
+<!-- <div class="Film">
+            <div class="imgFilm">
+              <img src="./src/img/exampleimage.png" alt="" />
+            </div>
+            <div class="nameFilm">
+              <p>Smile</p>
+            </div>
+          </div> -->
