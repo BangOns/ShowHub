@@ -7,6 +7,7 @@
     <title>ShowHub</title>
     <link rel="stylesheet" href="./src/css/index.css" />
     <link rel="stylesheet" href="./src/css/main_footer.css" />
+    <link rel="stylesheet" href="./src/css/signup_signin.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -23,16 +24,16 @@
       <div class="attr">
         <div class="list">
           <div class="movies">
-            <a href="#">Movies</a>
+            <a href="#recomended">Recomended</a>
           </div>
           <div class="series">
-            <a href="#">Series</a>
+            <a href="#">TV Show</a>
           </div>
           <div class="contact">
             <a href="#">Popular</a>
           </div>
           <div class="AboutUs">
-            <a href="#">Watchlist</a>
+            <a href="#">Indonesia</a>
           </div>
         </div>
       </div>
@@ -48,10 +49,10 @@
       </div>
       <div class="Auth">
         <div class="signIn">
-          <a href="#">Sign In</a>
+          <p class="thisSignIn" >Sign In</p>
         </div>
         <div class="signUp">
-          <a href="#">Sign Up</a>
+          <p class="thisSignUp" >Sign Up</p>
         </div>
       </div>
       <div class="burgerNav">
@@ -65,19 +66,19 @@
             <a href="#">Movies</a>
           </div>
           <div class="Listseries">
-            <a href="#">Series</a>
+            <a href="#">TV Show</a>
           </div>
           <div class="Listcontact">
-            <a href="#">Contact</a>
+            <a href="#">Popular</a>
           </div>
           <div class="ListAboutUs">
-            <a href="#">About Us</a>
+            <a href="#">Watchlist</a>
           </div>
           <div class="ListsignIn">
-            <a href="#">Sign In</a>
+            <p class="thisSignIn" >Sign In</p>
           </div>
           <div class="ListsignUp">
-            <a href="#">Sign Up</a>
+            <p class="thisSignUp">Sign Up</p>
           </div>
         </div>
       </div>
@@ -112,34 +113,234 @@
       </div>
     </div>
     <!-- Top In  2023 -->
-    <main class="main1">
+    <main class="main1" id="recomended">
       <div class="textTopIn2023">
-        <p>Top In 2023</p>
+        <p>Recomended</p>
       </div>
-      <div class="listFilm mySwiper">
-        <div class="thisFilm swiper-wrapper"></div>
+      <div class="listFilm">
+        <div class="thisFilm"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
     </main>
+    <!-- TV Show -->
+    <main class="main2" id="TvShow">
+      <div class="textTopIn2023 Tv">
+        <p>Tv Show</p>
+      </div>
+      <div class="listFilm">
+        <div class="thisFilm TvShow"></div>
+        <div class="swiper-button-next nextTv"></div>
+        <div class="swiper-button-prev prevTv"></div>
+      </div>
+    </main>
+    <!-- Popular -->
+    <main class="main3" id="Popular">
+      <div class="textTopIn2023">
+        <p>Popular</p>
+      </div>
+      <div class="listFilm">
+        <div class="thisFilm Popular"></div>
+        <div class="swiper-button-next nextPopular"></div>
+        <div class="swiper-button-prev prevPopular"></div>
+      </div>
+    </main>
+    <!-- Indonesia -->
+    <main class="main4" id="Indonesia">
+      <div class="textTopIn2023">
+        <p>Indonesia</p>
+      </div>
+      <div class="listFilm">
+        <div class="thisFilm Indonesia"></div>
+        <div class="swiper-button-next nextIndonesia"></div>
+        <div class="swiper-button-prev prevIndonesia"></div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="ContactUs">
+          <div class="Connect">
+            <p>Let's Connect and Say Hi!</p>
+          </div>
+          <div class="work">
+            <p>If you’d like to say hi or work with me:</p>
+          </div>
+          <div class="typeText">
+            <div class="inputContact">
+              <input type="text" placeholder="Type a massage here">
+            </div>
+            <div class="buttonContact">
+              <button>Send</button>
+            </div>
+          </div>
+        </div>
+        <div class="SocialMedia">
+          <div class="textSocialmedia">
+            <p>Social Media Links</p>
+          </div>
+          <div class="listSocialMedia">
+            <div class="linkSocialMedia">
+              <div class="Github">
+                <a href="#">
+                  <div class="imgGithub">
+                    <img src="./src/img/Vector.png" alt="" />
+                  </div>
+                  <div class="nameGithub"><p>fadhil23-pdf</p></div>
+                </a>
+              </div>
+              <div class="Linkedin">
+                <a href="#">
+                  <div class="imgLinkedin">
+                    <img src="./src/img/icon _linkedin_.png" alt="" />
+                  </div>
+                  <div class="nameLinkedin">
+                    <p>Rizki Nur Fadhila</p>
+                  </div>
+                </a>
+              </div>
+              <div class="Twitter">
+                <a href="">
+                  <div class="imgTwitter">
+                    <img src="./src/img/icon _twitter.png" alt="" />
+                  </div>
+                  <div class="nameTwitter">
+                    <p>Fdhlrizki</p>
+                  </div>
+                </a>
+              </div>
+              <div class="Wa">
+                <a href="">
+                  <div class="imgWa">
+                    <img src="./src/img/icon _phone call_.png" alt="" />
+                  </div>
+                  <div class="nameWa">
+                    <p>+62 859-6395-6970</p>
+                  </div>
+                </a>
+              </div>
+              <div class="Facebook">
+                <a href="">
+                  <div class="imgFacebook">
+                    <img src="./src/img/icon _facebook_.png" alt="" />
+                  </div>
+                  <div class="nameFacebook">
+                    <p>Rizki Fadhila</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+        </div>
+    </footer>
+    <!-- Container Sign Up -->
+    <div class="containerSignUp">
+      <div class="textSignUp">
+        <div class="close">
+          <img src="./src/img/close.png" class="thisClose" alt="">
+        </div>
+        <div class="text1Signup">
+          <h2>My Movie</h2>
+        </div>
+        <div class="text2Signup">
+          <p>Sign up to My Movie</p>
+        </div>
+      </div>
+      <div class="KotakRegister">
+        <div class="IsiRegister">
+          <div class="inputUsername">
+            <div class="labelName">
+              <label for="">Username</label>
+            </div>
+            <div class="userInputUsername">
+              <input type="text" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="inputPassword">
+            <div class="labelPassword">
+              <label for="">Password</label>
+            </div>
+            <div class="userInputPassword">
+              <input type="password" placeholder="****">
+            </div>
+          </div>
+          <div class="inputEmail">
+            <div class="labelEmail">
+              <label for="">Email</label>
+            </div>
+            <div class="userInputEmail">
+              <input type="email" placeholder="Your Email">
+            </div>
+          </div>
+          <div class="inputConfirmPassword">
+            <div class="labelConfirmPassword">
+              <label for="">Confirm Password</label>
+            </div>
+            <div class="userInputConfirmPassword">
+              <input type="password" placeholder="****">
+            </div>
+          </div>
+        <div class="inputNumber">
+          <div class="labelNumber">
+            <label for="">Number</label>
+          </div>
+          <div class="userInputNumber">
+            <input type="number" placeholder="089...">
+          </div>
+        </div>
+        <div class="alreadySignIn">
+          <div class="buttonAlready">
+            <button class="buttonSignUp">Sign Up</button>
+          </div>
+          <div class="accountReady">
+            <p>already have a account ?  <span class="readySignIn">Sign Up</span></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Sign In -->
+    <div class="containerSignIn">
+      <div class="textSignIn">
+        <div class="close">
+          <img src="./src/img/close.png" class="thisCloseSignIn" alt="">
+        </div>
+        <div class="text1SignIn">
+          <h2>My Movie</h2>
+        </div>
+        <div class="text2SignIn">
+          <p>Sign In to My Movie</p>
+        </div>
+      </div>
+      <div class="KotakSignIn">
+        <div class="IsiSignIn">
+          <div class="inputEmailSignIn">
+            <div class="labelEmailSignIn">
+              <label for="">Email</label>
+            </div>
+            <div class="userInputEmailSignIn">
+              <input type="email" placeholder="Your Email">
+            </div>
+          </div>
+          <div class="inputPasswordSignIn">
+            <div class="labelPasswordSignIn">
+              <label for="">Password</label>
+            </div>
+            <div class="userInputPasswordSignIn">
+              <input type="password" placeholder="****">
+            </div>
+          </div>
+        <div class="alreadySignIn2">
+          <div class="buttonAlready2">
+            <button class="ButtonSignIn">Sign In</button>
+          </div>
+         
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/index.js"></script>
   </body>
-  <script src="./src/js/index.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper("mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
 </html>
-<!-- <div class="Film">
-            <div class="imgFilm">
-              <img src="./src/img/exampleimage.png" alt="" />
-            </div>
-            <div class="nameFilm">
-              <p>Smile</p>
-            </div>
-          </div> -->
+

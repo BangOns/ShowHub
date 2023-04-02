@@ -1,0 +1,336 @@
+.containerSignUp,
+.containerSignIn {
+  display: none;
+  z-index: 100232323;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(125, 125, 125, 0.2);
+  transition: all 0.4s ease;
+}
+
+.textSignUp,
+.textSignIn {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.close {
+  width: 85%;
+  display: flex;
+  justify-content: flex-end;
+}
+.close > img:hover {
+  cursor: pointer;
+}
+.text1Signup,
+.text1SignIn {
+  font-weight: 700;
+  font-size: 30px;
+}
+.text2Signup,
+.text2SignIn {
+  font-weight: 400;
+  font-size: 20px;
+}
+.KotakRegister {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+}
+.IsiRegister {
+  border-radius: 15px;
+  width: 70%;
+  background-color: #330031;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.inputUsername,
+.inputPassword,
+.inputConfirmPassword,
+.inputEmail,
+.inputNumber {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.inputEmailSignIn,
+.inputPasswordSignIn {
+  width: 100%;
+  height: 29%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.labelName,
+.labelPassword,
+.labelConfirmPassword,
+.labelEmail,
+.labelNumber {
+  width: 78%;
+  height: 20%;
+}
+.labelEmailSignIn,
+.labelPasswordSignIn {
+  width: 78%;
+  height: 30%;
+}
+.labelName > label,
+.labelPassword > label,
+.labelEmail > label,
+.labelConfirmPassword > label,
+.labelNumber > label {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+}
+.labelPasswordSignIn > label,
+.labelEmailSignIn > label {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+}
+.userInputUsername,
+.userInputPassword,
+.userInputEmail,
+.userInputConfirmPassword,
+.userInputNumber {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+}
+.userInputPasswordSignIn,
+.userInputEmailSignIn {
+  width: 80%;
+  height: 35%;
+}
+.userInputUsername > input,
+.userInputPassword > input,
+.userInputEmail > input,
+.userInputConfirmPassword > input,
+.userInputNumber > input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  background-color: none;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px;
+  background-color: #d9d9d9;
+}
+.userInputPasswordSignIn > input,
+.userInputEmailSignIn > input {
+  width: 75%;
+  height: 40px;
+  outline: none;
+  background-color: none;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px;
+  background-color: #d9d9d9;
+}
+.alreadySignIn {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+.alreadySignIn2 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.buttonAlready {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.buttonAlready > button {
+  width: 130px;
+  height: 38px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 17px;
+  background: #d9d9d9;
+}
+.buttonAlready2 {
+  width: 75%;
+  display: flex;
+  justify-content: flex-start;
+}
+.buttonAlready2 > button {
+  width: 130px;
+  height: 38px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 17px;
+  background: #d9d9d9;
+}
+button:hover {
+  cursor: pointer;
+}
+.accountReady {
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+.accountReady > p > span {
+  color: #706dff;
+  text-decoration: none;
+}
+.KotakSignIn {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.IsiSignIn {
+  border-radius: 15px;
+  width: 70%;
+  background-color: #330031;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 924px) {
+  .labelName,
+  .labelPassword,
+  .labelConfirmPassword,
+  .labelEmail,
+  .labelNumber {
+    width: 70%;
+  }
+
+  .labelName > label,
+  .labelPassword > label,
+  .labelConfirmPassword > label,
+  .labelEmail > label,
+  .labelNumber > label {
+    font-size: 18px;
+  }
+  .labelPasswordSignIn > label,
+  .labelEmailSignIn > label {
+    font-size: 18px;
+  }
+  .userInputUsername > input,
+  .userInputPassword > input,
+  .userInputConfirmPassword > input,
+  .userInputEmail > input,
+  .userInputNumber > input {
+    width: 75%;
+    height: 35px;
+    font-size: 14px;
+  }
+  .userInputPasswordSignIn > input,
+  .userInputEmailSignIn > input {
+    width: 75%;
+    height: 35px;
+    font-size: 14px;
+  }
+  .buttonAlready > button {
+    width: 125px;
+    height: 35px;
+    font-size: 15px;
+  }
+  .buttonAlready2 > button {
+    width: 125px;
+    height: 35px;
+    font-size: 15px;
+  }
+  .accountReady {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .textSignUp {
+    margin-bottom: 0px;
+    height: 120px;
+  }
+  .text1Signup {
+    font-weight: 700;
+    font-size: 22px;
+  }
+  .text2Signup {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .text1SignIn {
+    font-weight: 700;
+    font-size: 22px;
+  }
+  .text2SignIn {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .IsiRegister {
+    display: block;
+  }
+  .IsiSignIn {
+    justify-content: center;
+    gap: 10px;
+  }
+  .inputUsername,
+  .inputPassword,
+  .inputConfirmPassword,
+  .inputEmail,
+  .inputNumber {
+    height: 16.6%;
+    justify-content: space-evenly;
+  }
+  .alreadySignIn {
+    height: 15%;
+  }
+  .labelName > label,
+  .labelPassword > label,
+  .labelConfirmPassword > label,
+  .labelEmail > label,
+  .labelNumber > label {
+    font-size: 15px;
+  }
+  .userInputUsername > input,
+  .userInputPassword > input,
+  .userInputConfirmPassword > input,
+  .userInputEmail > input,
+  .userInputNumber > input {
+    width: 73%;
+    height: 30px;
+    font-size: 14px;
+  }
+  .userInputPasswordSignIn > input,
+  .userInputEmailSignIn > input {
+    width: 90%;
+    height: 35px;
+    font-size: 14px;
+  }
+  .buttonAlready > button {
+    width: 115px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .buttonAlready2 > button {
+    width: 115px;
+    height: 35px;
+    font-size: 12px;
+  }
+  .accountReady {
+    font-size: 13px;
+  }
+}
