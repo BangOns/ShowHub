@@ -6,6 +6,30 @@
   top: 750px;
   margin-top: 130px;
 }
+.main2 {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  position: absolute;
+  top: 1250px;
+  margin-top: 130px;
+}
+.main3 {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  position: absolute;
+  top: 1750px;
+  margin-top: 130px;
+}
+.main4 {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  position: absolute;
+  top: 2250px;
+  margin-top: 130px;
+}
 .textTopIn2023 {
   width: 100%;
   height: 50px;
@@ -49,9 +73,12 @@
   border: 1px solid #f7f7f7;
   display: flex;
   gap: 60px;
-  overflow: auto;
+  transition: all 0.3s ease;
 }
-.Film {
+.Film,
+.Film2,
+.Film3,
+.Film4 {
   width: 200px;
   height: 340px;
   display: flex;
@@ -59,12 +86,24 @@
   justify-content: space-between;
   align-items: center;
 }
-.imgFilm > img {
+.Film :hover,
+.Film2 :hover,
+.Film3 :hover,
+.Film4:hover {
+  cursor: pointer;
+}
+.imgFilm > img,
+.imgFilm2 > img,
+.imgFilm3 > img,
+.imgFilm4 > img {
   width: 190px;
   height: 280px;
   border-radius: 20px;
 }
-.nameFilm {
+.nameFilm,
+.nameFilm2,
+.nameFilm3,
+.nameFilm4 {
   width: 180px;
   height: 35px;
   display: flex;
@@ -74,11 +113,393 @@
   color: white;
   border-radius: 35px;
 }
-.nameFilm > p {
-  font-size: 12px;
+.nameFilm > p,
+.nameFilm2 > p,
+.nameFilm3 > p,
+.nameFilm4 > p {
+  font-size: 10px;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.125em;
 }
 .swiper-button-next,
 .swiper-button-prev {
   z-index: 111;
+}
+
+.footer {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  top: 3050px;
+}
+.ThisFooter {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.SocialMedia {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background-color: #330031;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  flex-direction: column;
+}
+
+.listSocialMedia {
+  width: 100%;
+}
+.textSocialmedia {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+  color: white;
+}
+
+.textSocialmedia > p {
+  font-weight: 700;
+  font-size: 22px;
+}
+.linkSocialMedia {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.Github,
+.Linkedin,
+.Twitter,
+.Wa,
+.Facebook {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.Github > a,
+.Twitter > a,
+.Facebook > a,
+.Wa > a,
+.Linkedin > a {
+  width: 80%;
+  display: flex;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.imgGithub,
+.imgLinkedin,
+.imgTwitter,
+.imgWa,
+.imgFacebook {
+  width: 17%;
+}
+
+.nameWa {
+  width: 80%;
+}
+.nameWa > p {
+  font-size: 13px;
+}
+.ContactUs {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(
+    180deg,
+    #ff33f9 13.02%,
+    #ffffff 99.97%,
+    #265ec9 99.98%,
+    #3551c2 99.99%
+  );
+  border-radius: 60px 60px 0px 0px;
+  display: grid;
+  grid-template-rows: 0.5fr 0.3fr 0.8fr;
+  position: relative;
+  row-gap: 18px;
+}
+.Connect {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 32px;
+  color: white;
+}
+.Connect > p {
+  font-family: "Poppins";
+}
+.work {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.work > p {
+  font-weight: 500;
+  font-size: 24px;
+  font-family: "Poppins";
+  color: white;
+  line-height: 36px;
+}
+.typeText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.inputContact {
+  width: 450px;
+  height: 70px;
+  box-shadow: 40px 50px 40px rgba(120, 122, 145, 0.3);
+  border-radius: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputContact > input {
+  width: 380px;
+  height: 50px;
+  border: none;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+.inputContact > input:focus {
+  outline: none;
+}
+.inputContact > input::placeholder {
+  font-family: "Poppins";
+}
+.buttonContact {
+  width: 120px;
+}
+.buttonContact > button {
+  width: 116px;
+  height: 70px;
+  background: #660063;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Poppins";
+}
+@media screen and (max-width: 1035px) {
+  .Tv > p {
+    font-size: 15px;
+    width: 15%;
+  }
+  .imgGithub,
+  .imgLinkedin,
+  .imgTwitter,
+  .imgWa,
+  .imgFacebook {
+    width: 24%;
+  }
+  .nameLinkedin > p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .nameLinkedin > p {
+    font-size: 13px;
+  }
+  .nameWa > p {
+    font-size: 10px;
+  }
+  .nameGithub > p,
+  .nameTwitter > p,
+  .nameFacebook > p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .footer {
+    width: 100%;
+    height: 600px;
+  }
+  .SocialMedia {
+    padding-bottom: 7px;
+    height: 200px;
+  }
+  .linkSocialMedia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-bottom: 0;
+  }
+  .Github > a,
+  .Twitter > a,
+  .Facebook > a,
+  .Wa > a,
+  .Linkedin > a {
+    width: 90%;
+    justify-content: space-evenly;
+  }
+  .imgGithub,
+  .imgLinkedin,
+  .imgTwitter,
+  .imgWa,
+  .imgFacebook {
+    width: 13%;
+  }
+  .nameWa {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .Tv > p {
+    width: 18%;
+  }
+  .Tv::after {
+    width: 70%;
+  }
+  .nameWa {
+    width: 46%;
+  }
+  .Connect > p {
+    font-size: 28px;
+  }
+  .work > p {
+    font-size: 20px;
+  }
+  .inputContact {
+    width: 420px;
+    height: 60px;
+  }
+  .inputContact > input {
+    width: 380px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .buttonContact > button {
+    width: 106px;
+    height: 60px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .main1 {
+    top: 570px;
+  }
+  .main2 {
+    top: 1030px;
+  }
+  .main3 {
+    top: 1500px;
+  }
+  .main4 {
+    margin-top: 0;
+    top: 2140px;
+  }
+  .footer {
+    top: 2750px;
+  }
+  .typeText {
+    gap: 10px;
+  }
+  .inputContact {
+    width: 370px;
+    height: 45px;
+  }
+  .inputContact > input {
+    width: 340px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .buttonContact > button {
+    width: 95px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .textTopIn2023 > p {
+    font-size: 15px;
+  }
+  .Tv > p {
+    width: 24%;
+  }
+  .Tv::after {
+    width: 60%;
+  }
+  .imgGithub > img,
+  .imgLinkedin > img,
+  .imgTwitter > img,
+  .imgWa > img,
+  .imgFacebook > img {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .inputContact {
+    width: 310px;
+    height: 40px;
+  }
+  .inputContact > input {
+    width: 280px;
+    height: 35px;
+    font-size: 16px;
+  }
+  .buttonContact > button {
+    width: 85px;
+    height: 45px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .Tv > p {
+    width: 36%;
+  }
+  .Tv::after {
+    width: 45%;
+  }
+  .nameWa {
+    width: 60%;
+  }
+  .typeText {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .inputContact > input {
+    width: 260px;
+    height: 32px;
+    font-size: 16px;
+  }
+  .buttonContact {
+    width: auto;
+  }
+  .buttonContact > button {
+    width: 70px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .Connect > p {
+    font-size: 22px;
+  }
+  .work > p {
+    font-size: 15px;
+  }
+  .linkSocialMedia {
+    row-gap: 10px;
+  }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../font/Poppins-Regular.ttf") format("truetype");
 }
