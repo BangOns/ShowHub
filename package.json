@@ -1,9 +1,6 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-    "collaborative-filter": "^1.0.0-beta.3"
-  }
-=======
+    "collaborative-filter": "^1.0.0-beta.3",
     "swiper": "^9.1.1"
   },
   "name": "skripsi",
@@ -26,5 +23,4 @@
   },
   "homepage": "https://github.com/BangOns/ShowHub#readme",
   "description": ""
->>>>>>> c922081ad7d5cdd0234f6874771d36744b1f9997
 }

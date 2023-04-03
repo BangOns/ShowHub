@@ -55,6 +55,14 @@
           <p class="thisSignUp" >Sign Up</p>
         </div>
       </div>
+      <div class="Auth Login">
+        <div class="signIn">
+          <p class="thisSignInLogin" >Halo! Syahroni</p>
+        </div>
+        <div class="signUp">
+          <p class="thisLogout" >Log out</p>
+        </div>
+      </div>
       <div class="burgerNav">
         <span class="span"></span>
         <span class="span"></span>
@@ -74,12 +82,22 @@
           <div class="ListAboutUs">
             <a href="#">Watchlist</a>
           </div>
+        <div class="NotLogged">
           <div class="ListsignIn">
             <p class="thisSignIn" >Sign In</p>
           </div>
           <div class="ListsignUp">
             <p class="thisSignUp">Sign Up</p>
           </div>
+        </div>
+        <div class="Logged">
+          <div class="ListsignIn">
+            <p class="thisSignInLogin" >Halo! Syahroni</p>
+          </div>
+          <div class="ListsignUp">
+            <p class="thisLogout">Logout</p>
+          </div>
+        </div>
         </div>
       </div>
     </nav>
@@ -248,13 +266,14 @@
         </div>
       </div>
       <div class="KotakRegister">
-        <div class="IsiRegister">
+        <form class="IsiRegister">
+
           <div class="inputUsername">
             <div class="labelName">
               <label for="">Username</label>
             </div>
             <div class="userInputUsername">
-              <input type="text" placeholder="Your Name">
+              <input type="text" placeholder="Your Name" class="inputNameRegister" maxlength="8">
             </div>
           </div>
           <div class="inputPassword">
@@ -262,7 +281,7 @@
               <label for="">Password</label>
             </div>
             <div class="userInputPassword">
-              <input type="password" placeholder="****">
+              <input type="password" placeholder="****" class="inputPasswordRegister">
             </div>
           </div>
           <div class="inputEmail">
@@ -270,7 +289,7 @@
               <label for="">Email</label>
             </div>
             <div class="userInputEmail">
-              <input type="email" placeholder="Your Email">
+              <input type="email" placeholder="Your Email" class="inputEmailRegister">
             </div>
           </div>
           <div class="inputConfirmPassword">
@@ -278,7 +297,7 @@
               <label for="">Confirm Password</label>
             </div>
             <div class="userInputConfirmPassword">
-              <input type="password" placeholder="****">
+              <input type="password" placeholder="****" class="inputConfPasswordRegister">
             </div>
           </div>
         <div class="inputNumber">
@@ -286,18 +305,19 @@
             <label for="">Number</label>
           </div>
           <div class="userInputNumber">
-            <input type="number" placeholder="089...">
+            <input type="number" placeholder="089..." class="inputNumberRegister">
           </div>
         </div>
+
         <div class="alreadySignIn">
           <div class="buttonAlready">
-            <button class="buttonSignUp">Sign Up</button>
+            <button type="submit" class="buttonSignUp">Sign Up</button>
           </div>
           <div class="accountReady">
             <p>already have a account ?  <span class="readySignIn">Sign Up</span></p>
           </div>
         </div>
-        </div>
+      </form>
       </div>
     </div>
     <!-- Container Sign In -->
@@ -314,13 +334,13 @@
         </div>
       </div>
       <div class="KotakSignIn">
-        <div class="IsiSignIn">
+        <form class="IsiSignIn">
           <div class="inputEmailSignIn">
             <div class="labelEmailSignIn">
-              <label for="">Email</label>
+              <label for="">Username</label>
             </div>
             <div class="userInputEmailSignIn">
-              <input type="email" placeholder="Your Email">
+              <input type="text" placeholder="Your Name" class="inputNameLogin" maxlength="8">
             </div>
           </div>
           <div class="inputPasswordSignIn">
@@ -328,19 +348,19 @@
               <label for="">Password</label>
             </div>
             <div class="userInputPasswordSignIn">
-              <input type="password" placeholder="****">
+              <input type="password" placeholder="****"  class="inputPasswordLogin">
             </div>
           </div>
-        <div class="alreadySignIn2">
+          <div class="alreadySignIn2">
           <div class="buttonAlready2">
-            <button class="ButtonSignIn">Sign In</button>
+            <button type="submit" class="ButtonSignIn">Sign In</button>
           </div>
-         
         </div>
-        </div>
+      </form>
       </div>
     </div>
     <script src="./src/js/index.js"></script>
+    <script src="./src/js/Auth.js"></script>
   </body>
 </html>
 

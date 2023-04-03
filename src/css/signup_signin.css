@@ -195,6 +195,9 @@ button:hover {
   color: #706dff;
   text-decoration: none;
 }
+.readySignIn:hover {
+  cursor: pointer;
+}
 .KotakSignIn {
   width: 100%;
   height: 300px;
