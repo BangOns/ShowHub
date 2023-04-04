@@ -17,15 +17,6 @@ const userLogin = document.querySelector(".IsiSignIn");
 const inputNameLogin = document.querySelector(".inputNameLogin");
 const inputPasswordLogin = document.querySelector(".inputPasswordLogin");
 
-// Display Login
-const NotLogin = document.querySelector(".Auth");
-const containerLogin = document.querySelector(".Login");
-const thisSignInLogin = document.querySelectorAll(".thisSignInLogin");
-const Logout = document.querySelectorAll(".thisLogout");
-
-const displayBurgerNotLogin = document.querySelector(".NotLogged");
-const displayBurgerLogin = document.querySelector("Logged");
-
 // function Register
 userRegister.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -79,24 +70,35 @@ userLogin.addEventListener("submit", (e) => {
   }
 });
 
+// Display Login
+const NotLogin = document.querySelector(".Auth");
+const containerLogin = document.querySelector(".Login");
+const thisSignInLogin = document.querySelectorAll(".thisSignInLogin");
+const Logout = document.querySelectorAll(".thisLogout");
+
+const displayBurgerNotLogin = document.querySelector(".NotLogged");
+const displayBurgerLogin = document.querySelector(".Logged");
+const buttonLogin = document.querySelector(".myProfil");
+const myLogout = document.querySelector(".Logout");
 // Get data In LocalStorage and display to user
 let NewUser = localStorage.getItem("LoginUser");
 if (NewUser && innerWidth >= `924`) {
   NotLogin.style.display = "none";
   containerLogin.style.display = "flex";
-  thisSignInLogin[0].innerHTML = `Halo! ${JSON.parse(NewUser).nama}`;
-  thisSignInLogin[1].innerHTML = `Halo! ${JSON.parse(NewUser).nama}`;
+  thisSignInLogin[0].innerHTML = `${JSON.parse(NewUser).nama}`;
+  thisSignInLogin[1].innerHTML = `${JSON.parse(NewUser).nama}`;
 } else if (NewUser && innerWidth < `924`) {
+  console.log("ok");
   containerLogin.style.display = "none";
   NotLogin.style.display = "none";
   displayBurgerLogin.style.display = "flex";
   displayBurgerNotLogin.style.display = "none";
-
-  thisSignInLogin[0].innerHTML = `Halo! ${JSON.parse(NewUser).nama}`;
-  thisSignInLogin[1].innerHTML = `Halo! ${JSON.parse(NewUser).nama}`;
+  thisSignInLogin[0].innerHTML = `${JSON.parse(NewUser).nama}`;
+  thisSignInLogin[1].innerHTML = `${JSON.parse(NewUser).nama}`;
+} else if (!NewUser && innerWidth < `924`) {
+  displayBurgerLogin.style.display = "none ";
 } else {
   containerLogin.style.display = "none";
-  displayBurgerLogin.style.display = "none";
   displayBurgerNotLogin.style.display = "flex";
   NotLogin.style.display = "flex";
 }
@@ -108,8 +110,20 @@ window.addEventListener("resize", (e) => {
   } else if (NewUser && e.target.innerWidth >= `924`) {
     NotLogin.style.display = "none";
     containerLogin.style.display = "flex";
+  } else if (!NewUser && e.target.innerWidth >= `924`) {
+    NotLogin.style.display = "flex";
+    containerLogin.style.display = "none";
   }
 });
+buttonLogin.addEventListener("click", displayLogout);
+
+function displayLogout() {
+  if (myLogout.style.display == "flex") {
+    myLogout.style.display = "none";
+  } else {
+    myLogout.style.display = "flex";
+  }
+}
 
 Logout[0].addEventListener("click", () => {
   localStorage.removeItem("LoginUser");

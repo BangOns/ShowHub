@@ -6,9 +6,13 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-html,
+html {
+  scroll-behavior: smooth !important;
+}
+.activeColor {
+  color: #8f44fd;
+}
 body {
-  scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: #f8f8f8;
 }
@@ -39,7 +43,7 @@ body {
   font-weight: 700;
 }
 .attr {
-  width: 35%;
+  width: 38%;
 }
 .list {
   width: 90%;
@@ -48,25 +52,26 @@ body {
   align-items: center;
   height: 100%;
 }
-.movies > a,
-.series > a,
-.contact > a,
-.AboutUs > a {
+.movies > p,
+.series > p,
+.contact > p,
+.AboutUs > p {
   font-weight: 400;
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
-.movies > a:hover,
-.series > a:hover,
-.contact > a:hover,
-.AboutUs > a:hover {
+.movies > p:hover,
+.series > p:hover,
+.contact > p:hover,
+.AboutUs > p:hover {
   cursor: pointer;
 }
 .search {
   width: 27%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .kotakSearch {
   width: 89%;
@@ -94,7 +99,7 @@ body {
 .iconSearch {
   width: 9%;
 }
-.iconSearch > a > img {
+.iconSearch img {
   width: 14px;
   height: 14px;
 }
@@ -105,17 +110,53 @@ body {
   align-items: center;
 }
 .Login {
+  /* display: flex; */
   display: none;
+  position: relative;
 }
 .signIn > p,
 .signUp > p {
   color: black;
   font-size: 20px;
 }
-.signUp > p {
+.thisSignUp {
   border: 2px solid black;
   border-radius: 15px;
   padding: 10px;
+}
+.outss {
+  border: none;
+  padding: 0;
+}
+.myProfil {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.myProfil:hover {
+  cursor: pointer;
+}
+.fotoPP {
+  width: 20px;
+  height: 20px;
+}
+.thisSignInLogin {
+  color: #4f4f4f;
+  font-size: 19px;
+}
+.Logout {
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  background-color: #f8f8f8;
+  box-shadow: -10px 10px 25px 3px rgba(120, 122, 145, 0.3);
+  border-radius: 15px;
+  width: 100%;
+  padding: 6px;
+  transition: all 1s ease;
 }
 .signIn > p:hover,
 .signUp > p:hover {
@@ -164,23 +205,32 @@ body {
 
   justify-content: space-around;
 }
-.Listmovies > a,
-.Listseries > a,
-.Listcontact > a,
-.ListAboutUs > a,
-.ListsignIn > p,
-.ListsignUp > p {
+.Listmovies > p,
+.Listseries > p,
+.Listcontact > p,
+.ListAboutUs > p {
   font-weight: 400;
   width: 100%;
-
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
+.Listmovies > p:hover,
+.Listseries > p:hover,
+.Listcontact > p:hover,
+.ListAboutUs > p :hover {
+  cursor: pointer;
+}
+.ListsignIn > p,
+.ListsignUp > p {
+  font-size: 20px;
+  color: black;
+  font-weight: 400;
+}
 .NotLogged {
   width: 100%;
   height: 30%;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -188,10 +238,26 @@ body {
 .Logged {
   width: 100%;
   height: 30%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.ListsignIn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.ListsignUp {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.ListsignUp > p {
+  border: none;
 }
 .ListsignIn > p:hover,
 .ListsignUp > p:hover {
@@ -319,16 +385,12 @@ body {
     width: 442px;
     height: 422px;
   }
-  .Login > .signIn > p,
-  .Login > .signUp > p {
-    font-size: 15px !important;
-  }
 }
 @media screen and (max-width: 1210px) {
-  .movies > a,
-  .series > a,
-  .contact > a,
-  .AboutUs > a {
+  .movies > p,
+  .series > p,
+  .contact > p,
+  .AboutUs > p {
     font-size: 15px;
   }
 }
@@ -395,10 +457,10 @@ body {
   }
 }
 @media screen and (max-width: 940px) {
-  .movies > a,
-  .series > a,
-  .contact > a,
-  .AboutUs > a {
+  .movies > p,
+  .series > p,
+  .contact > p,
+  .AboutUs > p {
     font-size: 13px;
   }
   .Login > .signIn > p,
