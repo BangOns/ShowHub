@@ -25,9 +25,8 @@ userRegister.addEventListener("submit", (e) => {
   const confPw = inputConfPasswordRegister.value;
   const Email = inputEmailRegister.value;
   const Number = inputNumberRegister.value;
-  console.log(pw);
 
-  if (pw != confPw) {
+  if (pw != confPw && nama == " " && Email == " " && Number == " ") {
     alert("Mohon Diperiksa Kembali");
   } else {
     const hasil = { nama, pw, confPw, Email, Number };
@@ -88,7 +87,6 @@ if (NewUser && innerWidth >= `924`) {
   thisSignInLogin[0].innerHTML = `${JSON.parse(NewUser).nama}`;
   thisSignInLogin[1].innerHTML = `${JSON.parse(NewUser).nama}`;
 } else if (NewUser && innerWidth < `924`) {
-  console.log("ok");
   containerLogin.style.display = "none";
   NotLogin.style.display = "none";
   displayBurgerLogin.style.display = "flex";

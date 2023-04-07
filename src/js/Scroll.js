@@ -5,9 +5,7 @@ const navLinks = document.querySelectorAll(".list p");
 const navLinksTablet = document.querySelectorAll(".thisList p");
 const section = document.querySelectorAll("main");
 const navbarDesktop = document.querySelector(".navBar");
-window.addEventListener("scroll", () => {
-  console.log(scrollY);
-});
+
 navLinks[0].addEventListener("click", () => {
   window.scrollTo(0, 760);
 });
@@ -56,6 +54,3 @@ navLinksTablet[3].addEventListener("click", () => {
   listBurger2.classList.remove("activeList");
   burgerButton2.classList.remove("active");
 });
-//display laptop recomended = 770
-//display mobile recomended = 558
-//display tablet recomended = 760
