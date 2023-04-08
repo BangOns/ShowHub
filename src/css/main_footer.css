@@ -112,6 +112,9 @@
 .Angkarating {
   font-weight: 700;
 }
+.swiper-button-prev {
+  margin-left: 10px;
+}
 .panjangRating {
   width: 80%;
   height: 80%;

@@ -36,6 +36,69 @@ const ButtonSignUp = document.querySelectorAll(".thisSignUp");
 const ButtoncloseSignIn = document.querySelector(".thisCloseSignIn");
 const KotakSignIn = document.querySelector(".containerSignIn");
 const ButtonSignIn = document.querySelectorAll(".thisSignIn");
+
+//Details Films
+const containerDisplayDetails = document.querySelector(
+  ".containerDisplayDetails"
+);
+const RealContainerDetails = document.querySelector(
+  ".RealContainerDisplayDetails"
+);
+const ButtoncloseDetails = document.querySelector(".closeDetails");
+const DetailsFilms = document.querySelector(".DetailsFilms");
+// const ButtonLike = document.querySelector(".like");
+// const ButtonDislike = document.querySelector(".dislike");
+
+let doneLike = false;
+let doneDislike = false;
+function closeData() {
+  RealContainerDetails.style.display = "none";
+}
+function myLike() {
+  const imgUnlike = document.querySelector(".unLike");
+  const imgLike = document.querySelector(".doneLike");
+  const imgUnDislike = document.querySelector(".unDislike");
+  const imgDislike = document.querySelector(".doneDislike");
+  if (!doneLike) {
+    if (doneDislike) {
+      imgUnDislike.style.display = "block";
+      imgDislike.style.display = "none";
+      imgUnlike.style.display = "none";
+      imgLike.style.display = "block";
+      doneDislike = false;
+    }
+    imgUnlike.style.display = "none";
+    imgLike.style.display = "block";
+    doneLike = true;
+  } else {
+    imgUnlike.style.display = "block";
+    imgLike.style.display = "none";
+    doneLike = false;
+  }
+}
+
+function myDislike() {
+  const imgUnlike = document.querySelector(".unLike");
+  const imgLike = document.querySelector(".doneLike");
+  const imgUnDislike = document.querySelector(".unDislike");
+  const imgDislike = document.querySelector(".doneDislike");
+  if (!doneDislike) {
+    if (doneLike) {
+      imgUnDislike.style.display = "none";
+      imgDislike.style.display = "block";
+      imgUnlike.style.display = "block";
+      imgLike.style.display = "none";
+      doneLike = false;
+    }
+    imgUnDislike.style.display = "none";
+    imgDislike.style.display = "block";
+    doneDislike = true;
+  } else {
+    imgUnDislike.style.display = "block";
+    imgDislike.style.display = "none";
+    doneDislike = false;
+  }
+}
 // Burger Button
 burgerButton.addEventListener("click", () => {
   burgerButton.classList.toggle("active");
@@ -224,7 +287,105 @@ async function getDataId1() {
             method: "GET",
           }
         );
+
         let hasilRes = await response.json();
+        const response2 = await fetch(
+          `https://www.omdbapi.com/?apikey=b1b4d324&i=${hasilRes.imdb_id}`,
+          {
+            method: "GET",
+          }
+        );
+        let hasilRes2 = await response2.json();
+        RealContainerDetails.style.display = "block";
+        if (hasilRes2) {
+          let getMinutess = parseInt(hasilRes2.Runtime.slice(0, 3));
+          let hours = Math.round(getMinutess / 60);
+          let minutes = hours % 60;
+          let mydetailFilms = `<div class="containerDisplayDetails">
+             <div class="DetailsFilms">
+               <div class="closeDetailsFilms">
+                 <div class="imgCloseDetails">
+                   <img src="./src/img/close.png" alt="close.png" class="closeDetails" onclick="closeData()">
+                 </div>
+               </div>
+               <div class="imgFilms">
+                 <div class="thisImgFilms">
+                   <img src=${hasilRes2.Poster} alt="${hasilRes2.Poster}">
+                 </div>
+               </div>
+               <div class="ListDetails">
+                 <div class="JudulFilms">
+                   <h3>${hasilRes.original_title}</h3>
+                 </div>
+                 <div class="storyLine">
+                   <div class="textStoryLine">
+                     <p>Storyline</p>
+                   </div>
+                   <div class="deskripsiDetails">
+                     <p>${hasilRes.overview}</p>
+                   </div>
+                 </div>
+                 <div class="ListDeskripsi">
+                 <div class="Director">
+                   <div class="LabelDirector"><p>Director</p></div>
+                   <div class="nameDirector"><p>: ${
+                     hasilRes2.Director
+                   } </p></div>
+                 </div>
+                 <div class="Reales">
+                   <div class="labelReales"><p>Reales</p></div>
+                   <div class="dateReales"><p>: ${hasilRes2.Released}</p></div>
+                 </div>
+                 <div class="Writer">
+                   <div class="labelWriter"><p>Writer</p></div>
+                   <div class="nameWriter"><p>: ${hasilRes2.Writer}</p></div>
+                 </div>
+                 <div class="Genre">
+                   <div class="labelGenre">Genre</div>
+                   <div class="nameGenre"><p>: ${hasilRes2.Genre}</p></div>
+                 </div>
+                 <div class="Production">
+                   <div class="labelProduction"><p>Production companies</p></div>
+                   <div class="nameProduction"><p>: ${
+                     hasilRes.production_companies[0].name
+                   }</p></div>
+                 </div>
+                 <div class="Duration">
+                   <div class="labelDuration"><p>Duration</p></div>
+                   <div class="nameDuration"><p>: ${hours}H ${minutes}m</p></div>
+                 </div>
+                 <div class="Rate">
+                   <div class="labelRate"><p>Rate</p></div>
+                   <div class="nameRate"><p>: ${hasilRes.vote_average
+                     .toLocaleString()
+                     .slice(0, 3)}/10</p></div>
+                 </div>
+               </div>
+                 <div class="ButtonLikeAndDislike">
+                   <div class="buttonLike">
+                     <button type="button" class="like" onclick="myLike()">
+                       <div class="thumbLike"><img src="./src/img/like-21-color.png" alt="" class="unLike">
+                       <img src="./src/img/like-21.png" alt="" class="doneLike">
+                       </div>
+                       <div class="textLike">Like</div>
+                     </button>
+                   </div>
+                   <div class="buttonDislike">
+                     <button type="button" class="dislike" onclick="myDislike()">
+                         <div class="thumbDislike">
+                         <img src="./src/img/like-21-color.png" alt="dislike" class="unDislike">
+                         <img src="./src/img/like-21.png" alt="dislike" class="doneDislike">
+                       </div>
+                       <div class="textDislike">Dislike</div>
+                       </button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>`;
+          RealContainerDetails.innerHTML = mydetailFilms;
+          return hasilRes2;
+        }
         return hasilRes;
       } catch (error) {
         console.log(error);
@@ -245,7 +406,100 @@ async function getDataId2() {
           }
         );
         let hasilRes = await response.json();
-        console.log(hasilRes);
+        RealContainerDetails.style.display = "block";
+
+        console.log(hasilRes.created_by.length == 0);
+        let mydetailFilms = `<div class="containerDisplayDetails">
+        <div class="DetailsFilms">
+          <div class="closeDetailsFilms">
+            <div class="imgCloseDetails">
+              <img src="./src/img/close.png" alt="close.png" class="closeDetails" onclick="closeData()">
+            </div>
+          </div>
+          <div class="imgFilms">
+            <div class="thisImgFilms">
+              <img src=${`https://image.tmdb.org/t/p/original/${hasilRes.poster_path}`} alt="${`https://image.tmdb.org/t/p/original/${hasilRes.poster_path}`}">
+            </div>
+          </div>
+          <div class="ListDetails">
+            <div class="JudulFilms">
+              <h3>${hasilRes.original_name}</h3>
+            </div>
+            <div class="storyLine">
+              <div class="textStoryLine">
+                <p>Storyline</p>
+              </div>
+              <div class="deskripsiDetails">
+                <p>${hasilRes.overview}</p>
+              </div>
+            </div>
+            <div class="ListDeskripsi">
+            <div class="Director">
+              <div class="LabelDirector"><p>Director</p></div>
+              <div class="nameDirector"><p>: ${
+                hasilRes.created_by.length == 0
+                  ? "N/A"
+                  : hasilRes.created_by[0].name
+              } </p></div>
+            </div>
+            <div class="Reales">
+              <div class="labelReales"><p>Reales</p></div>
+              <div class="dateReales"><p>: ${hasilRes.first_air_date}</p></div>
+            </div>
+            <div class="Writer">
+              <div class="labelWriter"><p>Writer</p></div>
+              <div class="nameWriter"><p>: ${
+                hasilRes.created_by.length == 0
+                  ? "N/A"
+                  : hasilRes.created_by[0].name
+              } </p></div>
+            </div>
+            <div class="Genre">
+              <div class="labelGenre">Genre</div>
+              <div class="nameGenre"><p>: ${hasilRes.genres[0].name}</p></div>
+            </div>
+            <div class="Production">
+              <div class="labelProduction"><p>Production companies</p></div>
+              <div class="nameProduction"><p>: ${
+                hasilRes.production_companies[0].name
+              }</p></div>
+            </div>
+            <div class="Duration">
+              <div class="labelDuration"><p>Episode</p></div>
+              <div class="nameDuration"><p>: ${
+                hasilRes.episode_run_time
+              }</p></div>
+            </div>
+            <div class="Rate">
+              <div class="labelRate"><p>Rate</p></div>
+              <div class="nameRate"><p>: ${hasilRes.vote_average
+                .toLocaleString()
+                .slice(0, 3)}/10</p></div>
+            </div>
+          </div>
+            <div class="ButtonLikeAndDislike">
+              <div class="buttonLike">
+                <button type="button" class="like" onclick="myLike()">
+                  <div class="thumbLike"><img src="./src/img/like-21-color.png" alt="" class="unLike">
+                  <img src="./src/img/like-21.png" alt="" class="doneLike">
+                  </div>
+                  <div class="textLike">Like</div>
+                </button>
+              </div>
+              <div class="buttonDislike">
+                <button type="button" class="dislike" onclick="myDislike()">
+                    <div class="thumbDislike">
+                    <img src="./src/img/like-21-color.png" alt="dislike" class="unDislike">
+                    <img src="./src/img/like-21.png" alt="dislike" class="doneDislike">
+                  </div>
+                  <div class="textDislike">Dislike</div>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+        RealContainerDetails.innerHTML = mydetailFilms;
         return hasilRes;
       } catch (error) {
         console.log(error);
@@ -266,6 +520,103 @@ async function getDataId3() {
           }
         );
         let hasilRes = await response.json();
+        const response2 = await fetch(
+          `https://www.omdbapi.com/?apikey=b1b4d324&i=${hasilRes.imdb_id}`,
+          {
+            method: "GET",
+          }
+        );
+        let hasilRes2 = await response2.json();
+        RealContainerDetails.style.display = "block";
+        if (hasilRes2) {
+          let getMinutess = parseInt(hasilRes2.Runtime.slice(0, 3));
+          let hours = Math.round(getMinutess / 60);
+          let minutes = hours % 60;
+          let mydetailFilms = `<div class="containerDisplayDetails">
+             <div class="DetailsFilms">
+               <div class="closeDetailsFilms">
+                 <div class="imgCloseDetails">
+                   <img src="./src/img/close.png" alt="close.png" class="closeDetails" onclick="closeData()">
+                 </div>
+               </div>
+               <div class="imgFilms">
+                 <div class="thisImgFilms">
+                   <img src=${hasilRes2.Poster} alt="${hasilRes2.Poster}">
+                 </div>
+               </div>
+               <div class="ListDetails">
+                 <div class="JudulFilms">
+                   <h3>${hasilRes.original_title}</h3>
+                 </div>
+                 <div class="storyLine">
+                   <div class="textStoryLine">
+                     <p>Storyline</p>
+                   </div>
+                   <div class="deskripsiDetails">
+                     <p>${hasilRes.overview}</p>
+                   </div>
+                 </div>
+                 <div class="ListDeskripsi">
+                 <div class="Director">
+                   <div class="LabelDirector"><p>Director</p></div>
+                   <div class="nameDirector"><p>: ${
+                     hasilRes2.Director
+                   } </p></div>
+                 </div>
+                 <div class="Reales">
+                   <div class="labelReales"><p>Reales</p></div>
+                   <div class="dateReales"><p>: ${hasilRes2.Released}</p></div>
+                 </div>
+                 <div class="Writer">
+                   <div class="labelWriter"><p>Writer</p></div>
+                   <div class="nameWriter"><p>: ${hasilRes2.Writer}</p></div>
+                 </div>
+                 <div class="Genre">
+                   <div class="labelGenre">Genre</div>
+                   <div class="nameGenre"><p>: ${hasilRes2.Genre}</p></div>
+                 </div>
+                 <div class="Production">
+                   <div class="labelProduction"><p>Production companies</p></div>
+                   <div class="nameProduction"><p>: ${
+                     hasilRes.production_companies[0].name
+                   }</p></div>
+                 </div>
+                 <div class="Duration">
+                   <div class="labelDuration"><p>Duration</p></div>
+                   <div class="nameDuration"><p>: ${hours}H ${minutes}m</p></div>
+                 </div>
+                 <div class="Rate">
+                   <div class="labelRate"><p>Rate</p></div>
+                   <div class="nameRate"><p>: ${hasilRes.vote_average
+                     .toLocaleString()
+                     .slice(0, 3)}/10</p></div>
+                 </div>
+               </div>
+                 <div class="ButtonLikeAndDislike">
+                   <div class="buttonLike">
+                     <button type="button" class="like" onclick="myLike()">
+                       <div class="thumbLike"><img src="./src/img/like-21-color.png" alt="" class="unLike">
+                       <img src="./src/img/like-21.png" alt="" class="doneLike">
+                       </div>
+                       <div class="textLike">Like</div>
+                     </button>
+                   </div>
+                   <div class="buttonDislike">
+                     <button type="button" class="dislike" onclick="myDislike()">
+                         <div class="thumbDislike">
+                         <img src="./src/img/like-21-color.png" alt="dislike" class="unDislike">
+                         <img src="./src/img/like-21.png" alt="dislike" class="doneDislike">
+                       </div>
+                       <div class="textDislike">Dislike</div>
+                       </button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>`;
+          RealContainerDetails.innerHTML = mydetailFilms;
+          return hasilRes2;
+        }
         return hasilRes;
       } catch (error) {
         console.log(error);
@@ -285,7 +636,105 @@ async function getDataId4() {
             method: "GET",
           }
         );
+
         let hasilRes = await response.json();
+        const response2 = await fetch(
+          `https://www.omdbapi.com/?apikey=b1b4d324&i=${hasilRes.imdb_id}`,
+          {
+            method: "GET",
+          }
+        );
+        let hasilRes2 = await response2.json();
+        RealContainerDetails.style.display = "block";
+        if (hasilRes2) {
+          let getMinutess = parseInt(hasilRes2.Runtime.slice(0, 3));
+          let hours = Math.round(getMinutess / 60);
+          let minutes = hours % 60;
+          let mydetailFilms = `<div class="containerDisplayDetails">
+             <div class="DetailsFilms">
+               <div class="closeDetailsFilms">
+                 <div class="imgCloseDetails">
+                   <img src="./src/img/close.png" alt="close.png" class="closeDetails" onclick="closeData()">
+                 </div>
+               </div>
+               <div class="imgFilms">
+                 <div class="thisImgFilms">
+                   <img src=${hasilRes2.Poster} alt="${hasilRes2.Poster}">
+                 </div>
+               </div>
+               <div class="ListDetails">
+                 <div class="JudulFilms">
+                   <h3>${hasilRes.original_title}</h3>
+                 </div>
+                 <div class="storyLine">
+                   <div class="textStoryLine">
+                     <p>Storyline</p>
+                   </div>
+                   <div class="deskripsiDetails">
+                     <p>${hasilRes.overview}</p>
+                   </div>
+                 </div>
+                 <div class="ListDeskripsi">
+                 <div class="Director">
+                   <div class="LabelDirector"><p>Director</p></div>
+                   <div class="nameDirector"><p>: ${
+                     hasilRes2.Director
+                   } </p></div>
+                 </div>
+                 <div class="Reales">
+                   <div class="labelReales"><p>Reales</p></div>
+                   <div class="dateReales"><p>: ${hasilRes2.Released}</p></div>
+                 </div>
+                 <div class="Writer">
+                   <div class="labelWriter"><p>Writer</p></div>
+                   <div class="nameWriter"><p>: ${hasilRes2.Writer}</p></div>
+                 </div>
+                 <div class="Genre">
+                   <div class="labelGenre">Genre</div>
+                   <div class="nameGenre"><p>: ${hasilRes2.Genre}</p></div>
+                 </div>
+                 <div class="Production">
+                   <div class="labelProduction"><p>Production companies</p></div>
+                   <div class="nameProduction"><p>: ${
+                     hasilRes.production_companies[0].name
+                   }</p></div>
+                 </div>
+                 <div class="Duration">
+                   <div class="labelDuration"><p>Duration</p></div>
+                   <div class="nameDuration"><p>: ${hours}H ${minutes}m</p></div>
+                 </div>
+                 <div class="Rate">
+                   <div class="labelRate"><p>Rate</p></div>
+                   <div class="nameRate"><p>: ${hasilRes.vote_average
+                     .toLocaleString()
+                     .slice(0, 3)}/10</p></div>
+                 </div>
+               </div>
+                 <div class="ButtonLikeAndDislike">
+                   <div class="buttonLike">
+                     <button type="button" class="like" onclick="myLike()">
+                       <div class="thumbLike"><img src="./src/img/like-21-color.png" alt="" class="unLike">
+                       <img src="./src/img/like-21.png" alt="" class="doneLike">
+                       </div>
+                       <div class="textLike">Like</div>
+                     </button>
+                   </div>
+                   <div class="buttonDislike">
+                     <button type="button" class="dislike" onclick="myDislike()">
+                         <div class="thumbDislike">
+                         <img src="./src/img/like-21-color.png" alt="dislike" class="unDislike">
+                         <img src="./src/img/like-21.png" alt="dislike" class="doneDislike">
+                       </div>
+                       <div class="textDislike">Dislike</div>
+                       </button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>`;
+          RealContainerDetails.innerHTML = mydetailFilms;
+          return hasilRes2;
+        }
         return hasilRes;
       } catch (error) {
         console.log(error);
@@ -311,8 +760,7 @@ if (innerWidth > `924`) {
     let response = await data();
     let x = 0;
     let kelompok = [];
-    let kelompok2 = [];
-    let arrFalse = [];
+
     while (x < response.results.length - 1) {
       if (kelompok.length == 5) {
         arr.push(kelompok);
@@ -517,7 +965,7 @@ if (innerWidth > `924`) {
 
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film2" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -563,7 +1011,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
 
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film2" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -609,7 +1057,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
 
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film2" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -645,7 +1093,7 @@ if (innerWidth < `430`) {
   function DisplayTvShowMobile2(page = 0) {
     let html = "";
     let vote = arr2[page].vote_average.toLocaleString().split(".").join("");
-    let MyFilm = `<div class="Film" data-id=${arr2[page].id}>
+    let MyFilm = `<div class="Film2" data-id=${arr2[page].id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${arr2[page].poster_path}`} alt="" />
         </div>
@@ -707,7 +1155,7 @@ if (innerWidth > `924`) {
         .split(".")
         .join("")
         .slice(0, 2);
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film3" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -760,7 +1208,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
         .split(".")
         .join("")
         .slice(0, 2);
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film3" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -813,7 +1261,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
         .split(".")
         .join("")
         .slice(0, 2);
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film3" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -857,7 +1305,7 @@ if (innerWidth < `430`) {
       .split(".")
       .join("")
       .slice(0, 2);
-    let MyFilm = `<div class="Film" data-id=${arr3[page].id}>
+    let MyFilm = `<div class="Film3" data-id=${arr3[page].id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${arr3[page].poster_path}`} alt="" />
         </div>
@@ -922,7 +1370,7 @@ if (innerWidth > `924`) {
 
     arr4[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film4" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -968,7 +1416,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
     arr4[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
 
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film4" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -1014,7 +1462,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
     arr4[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
 
-      let MyFilm = `<div class="Film" data-id=${res.id}>
+      let MyFilm = `<div class="Film4" data-id=${res.id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
@@ -1052,7 +1500,7 @@ if (innerWidth < `430`) {
 
     let vote = arr4[page].vote_average.toLocaleString().split(".").join("");
 
-    let MyFilm = `<div class="Film" data-id=${arr4[page].id}>
+    let MyFilm = `<div class="Film4" data-id=${arr4[page].id}>
         <div class="imgFilm">
         <img src=${`https://image.tmdb.org/t/p/original/${arr4[page].poster_path}`} alt="" />
         </div>

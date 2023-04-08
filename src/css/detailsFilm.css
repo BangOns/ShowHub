@@ -1,0 +1,383 @@
+.RealContainerDisplayDetails {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.containerDisplayDetails {
+  width: 100%;
+  height: 100%;
+  z-index: 100232323;
+  position: fixed;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(125, 125, 125, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DetailsFilms {
+  width: 87%;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-rows: 0.2fr 1.9fr 1fr;
+  gap: 0px 60px;
+  grid-template-areas:
+    "close close"
+    "img details"
+    "img details";
+}
+.closeDetailsFilms {
+  grid-area: close;
+  padding: 10px;
+}
+.closeDetails:hover {
+  cursor: pointer;
+}
+.imgCloseDetails {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.imgFilms {
+  grid-area: img;
+}
+.thisImgFilms {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thisImgFilms > img {
+  width: 220px;
+  height: 336px;
+  border-radius: 10px;
+}
+.ListDetails {
+  grid-area: details;
+}
+.JudulFilms {
+  width: 100%;
+  font-weight: 700;
+  font-size: 32px;
+}
+.storyLine {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.textStoryLine {
+  font-weight: -700;
+  font-size: 32px;
+}
+.deskripsiDetails {
+  font-weight: 500;
+  font-size: 13px;
+  width: 90%;
+}
+.ListDeskripsi {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Director,
+.Reales,
+.Writer,
+.Genre,
+.Production,
+.Duration,
+.Rate {
+  width: 100%;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+}
+.LabelDirector,
+.labelReales,
+.labelWriter,
+.labelGenre,
+.labelProduction,
+.labelDuration,
+.labelRate {
+  width: 30%;
+}
+.ButtonLikeAndDislike {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 10px;
+}
+.buttonLike,
+.buttonDislike {
+  width: 100px;
+}
+.like,
+.dislike {
+  width: 100%;
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ff33f9;
+  border: none;
+  box-shadow: 0px 4.5px 10px 2px rgba(125, 125, 125, 0.5);
+  border-radius: 10px;
+}
+.textLike,
+.textDislike {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+.thumbDislike,
+.thumbLike {
+  position: relative;
+}
+.unLike {
+  display: block;
+  filter: drop-shadow(0 0 1px white);
+}
+.doneLike {
+  display: none;
+  animation-name: thumb;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.unDislike {
+  display: block;
+
+  transform: rotateX(180deg);
+  filter: drop-shadow(0 0 1px white);
+}
+.doneDislike {
+  display: none;
+  transform: rotateX(180deg);
+
+  animation-name: thumb2;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 980px) {
+  .storyLine {
+    margin-bottom: 5px;
+  }
+  .ListDeskripsi {
+    height: 233px;
+  }
+  .deskripsiDetails {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .Director,
+  .Reales,
+  .Writer,
+  .Genre,
+  .Production,
+  .Duration,
+  .Rate {
+    font-size: 13px;
+  }
+  .LabelDirector,
+  .labelReales,
+  .labelWriter,
+  .labelGenre,
+  .labelProduction,
+  .labelDuration,
+  .labelRate {
+    width: 50%;
+  }
+  .ButtonLikeAndDislike {
+    align-items: center;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 887px) {
+  .DetailsFilms {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1.2fr 1.6fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "close close"
+      "img img"
+      "details details";
+    padding: 10px;
+    height: 650px;
+  }
+  .thisImgFilms {
+    height: 100%;
+  }
+  .thisImgFilms > img {
+    width: 130px;
+    height: 196px;
+  }
+  .JudulFilms {
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .textStoryLine {
+    font-size: 20px;
+  }
+  .deskripsiDetails {
+    font-weight: 500;
+    font-size: 14px;
+    width: 90%;
+  }
+  .ListDeskripsi {
+    height: 188px;
+  }
+  .Director,
+  .Reales,
+  .Writer,
+  .Genre,
+  .Production,
+  .Duration,
+  .Rate {
+    font-size: 14px;
+  }
+  .LabelDirector,
+  .labelReales,
+  .labelWriter,
+  .labelGenre,
+  .labelProduction,
+  .labelDuration,
+  .labelRate {
+    width: 35%;
+  }
+  .ButtonLikeAndDislike {
+    width: 95%;
+    height: 50px;
+  }
+
+  .buttonLike,
+  .buttonDislike {
+    width: 80px;
+  }
+  .like,
+  .dislike {
+    height: 35px;
+  }
+  .textLike,
+  .textDislike {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 689px) {
+  .deskripsiDetails {
+    font-weight: 500;
+    font-size: 11px;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .DetailsFilms {
+    grid-template-rows: 0.2fr 1.1fr 1.7fr;
+    height: 650px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .LabelDirector,
+  .labelReales,
+  .labelWriter,
+  .labelGenre,
+  .labelProduction,
+  .labelDuration,
+  .labelRate {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .JudulFilms {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .textStoryLine {
+    font-size: 18px;
+  }
+  .deskripsiDetails {
+    font-weight: 500;
+    font-size: 12px;
+    width: 90%;
+  }
+  .ListDeskripsi {
+    height: 160px;
+  }
+  .Director,
+  .Reales,
+  .Writer,
+  .Genre,
+  .Production,
+  .Duration,
+  .Rate {
+    font-size: 12px;
+  }
+  .ButtonLikeAndDislike {
+    width: 95%;
+    height: 60px;
+  }
+  .buttonLike,
+  .buttonDislike {
+    width: 80px;
+  }
+  .like,
+  .dislike {
+    height: 30px;
+  }
+  .textLike,
+  .textDislike {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+@keyframes thumb {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: rotate(-30deg);
+  }
+  90% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes thumb2 {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: rotateX(30deg);
+  }
+  90% {
+    transform: rotateX(100deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
