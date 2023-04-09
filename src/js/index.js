@@ -46,11 +46,9 @@ const RealContainerDetails = document.querySelector(
 );
 const ButtoncloseDetails = document.querySelector(".closeDetails");
 const DetailsFilms = document.querySelector(".DetailsFilms");
-// const ButtonLike = document.querySelector(".like");
-// const ButtonDislike = document.querySelector(".dislike");
-
 let doneLike = false;
 let doneDislike = false;
+
 function closeData() {
   RealContainerDetails.style.display = "none";
 }
@@ -408,7 +406,6 @@ async function getDataId2() {
         let hasilRes = await response.json();
         RealContainerDetails.style.display = "block";
 
-        console.log(hasilRes.created_by.length == 0);
         let mydetailFilms = `<div class="containerDisplayDetails">
         <div class="DetailsFilms">
           <div class="closeDetailsFilms">
@@ -966,7 +963,7 @@ if (innerWidth > `924`) {
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
       let MyFilm = `<div class="Film2" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm2">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -975,7 +972,7 @@ if (innerWidth > `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm2">
         <p>${res.name}</p>
         </div>
         </div>`;
@@ -1012,7 +1009,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
       let MyFilm = `<div class="Film2" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm2">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1021,7 +1018,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm2">
         <p>${res.name}</p>
         </div>
         </div>`;
@@ -1058,7 +1055,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
     arr2[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
       let MyFilm = `<div class="Film2" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm2">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1067,7 +1064,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm2">
         <p>${res.name}</p>
         </div>
         </div>`;
@@ -1094,7 +1091,7 @@ if (innerWidth < `430`) {
     let html = "";
     let vote = arr2[page].vote_average.toLocaleString().split(".").join("");
     let MyFilm = `<div class="Film2" data-id=${arr2[page].id}>
-        <div class="imgFilm">
+        <div class="imgFilm2">
         <img src=${`https://image.tmdb.org/t/p/original/${arr2[page].poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1103,7 +1100,7 @@ if (innerWidth < `430`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm2">
         <p>${arr2[page].name}</p>
         </div>
         </div>`;
@@ -1156,7 +1153,7 @@ if (innerWidth > `924`) {
         .join("")
         .slice(0, 2);
       let MyFilm = `<div class="Film3" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm3">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1168,7 +1165,7 @@ if (innerWidth > `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm3">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1209,7 +1206,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
         .join("")
         .slice(0, 2);
       let MyFilm = `<div class="Film3" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm3">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
          <div class="rating">
@@ -1221,7 +1218,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm3">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1262,7 +1259,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
         .join("")
         .slice(0, 2);
       let MyFilm = `<div class="Film3" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm3">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1274,7 +1271,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm3">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1306,7 +1303,7 @@ if (innerWidth < `430`) {
       .join("")
       .slice(0, 2);
     let MyFilm = `<div class="Film3" data-id=${arr3[page].id}>
-        <div class="imgFilm">
+        <div class="imgFilm3">
         <img src=${`https://image.tmdb.org/t/p/original/${arr3[page].poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1318,7 +1315,7 @@ if (innerWidth < `430`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm3">
         <p>${arr3[page].original_title}</p>
         </div>
         </div>`;
@@ -1371,7 +1368,7 @@ if (innerWidth > `924`) {
     arr4[page].forEach((res) => {
       let vote = res.vote_average.toLocaleString().split(".").join("");
       let MyFilm = `<div class="Film4" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm4">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1380,7 +1377,7 @@ if (innerWidth > `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm4">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1417,7 +1414,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
       let vote = res.vote_average.toLocaleString().split(".").join("");
 
       let MyFilm = `<div class="Film4" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm4">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1426,7 +1423,7 @@ if (innerWidth > `780` && innerWidth < `924`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm4">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1463,7 +1460,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
       let vote = res.vote_average.toLocaleString().split(".").join("");
 
       let MyFilm = `<div class="Film4" data-id=${res.id}>
-        <div class="imgFilm">
+        <div class="imgFilm4">
         <img src=${`https://image.tmdb.org/t/p/original/${res.poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1472,7 +1469,7 @@ if (innerWidth > `430` && innerWidth < `780`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm4">
         <p>${res.original_title}</p>
         </div>
         </div>`;
@@ -1501,7 +1498,7 @@ if (innerWidth < `430`) {
     let vote = arr4[page].vote_average.toLocaleString().split(".").join("");
 
     let MyFilm = `<div class="Film4" data-id=${arr4[page].id}>
-        <div class="imgFilm">
+        <div class="imgFilm4">
         <img src=${`https://image.tmdb.org/t/p/original/${arr4[page].poster_path}`} alt="" />
         </div>
         <div class="rating">
@@ -1510,7 +1507,7 @@ if (innerWidth < `430`) {
         <div class="thisSize" style="width:${vote}%;" ></div>
         </div>
         </div>
-        <div class="nameFilm">
+        <div class="nameFilm4">
         <p>${arr4[page].original_title}</p>
         </div>
         </div>`;
@@ -1522,3 +1519,215 @@ if (innerWidth < `430`) {
     }
   }
 }
+const header1 = document.querySelector(".header");
+const main11 = document.querySelector(".main1");
+const main22 = document.querySelector(".main2");
+const main33 = document.querySelector(".main3");
+const main44 = document.querySelector(".main4");
+const searchInput = document.querySelector(".inputSearch");
+const ButtonSearch = document.querySelector(".iconSearch");
+const containerSearch = document.querySelector(".ListSearchFilm");
+const mainSearch = document.querySelector(".mainSearch");
+const footer = document.querySelector(".footer");
+const textResults = document.querySelector(".textSearch p");
+let styleTop = getComputedStyle(footer).top.toLocaleString().slice(0, 4);
+let arrSearch = [];
+
+async function getInput() {
+  let results = searchInput.value;
+  if (results != "") {
+    mainSearch.style.display = "block";
+    header1.style.display = "none";
+    main11.style.display = "none";
+    main22.style.display = "none";
+    main33.style.display = "none";
+    main44.style.display = "none";
+    await dataSearch(results);
+    searchInput.value = "";
+  } else {
+    alert("No results");
+  }
+}
+ButtonSearch.addEventListener("click", getInput);
+
+const dataSearch = async (e) => {
+  try {
+    let response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=df3bdd5a174cac305c5d71d51733fff7&page=1&sort_by=primary_release_date.asc&query=${e}`,
+      {
+        method: "GET",
+      }
+    );
+    let clearResponse = await response.json();
+    await renderDataSearch(clearResponse);
+    return clearResponse;
+  } catch (error) {
+    textResults.textContent = `Youre results Film Undifined`;
+    console.log(Error.message);
+  }
+};
+
+const renderDataSearch = async (e) => {
+  if (e.results.length != 0) {
+    textResults.textContent = `Film Results "${searchInput.value}"`;
+
+    e.results.forEach((value) => {
+      arrSearch.push(value);
+    });
+  } else {
+    textResults.textContent = `Youre Results ${searchInput.value} : Not Found`;
+  }
+  renderDisplaySearch();
+  return arrSearch;
+};
+const renderDisplaySearch = async () => {
+  let html = "";
+  arrSearch.forEach((film) => {
+    let vote = film.vote_average
+      .toLocaleString()
+      .split(".")
+      .join("")
+      .slice(0, 2);
+    let resSearch = `<div class="FilmSearch" data-id=${film.id} >
+     <div class="imgFilmSearch">
+     <img src=https://image.tmdb.org/t/p/original${film.poster_path} alt="" />
+     </div>
+     <div class="rating">
+     <div class="Angkarating"><p>${film.vote_average
+       .toLocaleString()
+       .slice(0, 3)}</p></div>
+     <div class="panjangRating">
+     <div class="thisSize" style="width:${vote}%;" ></div>
+     </div>
+     </div>
+     <div class="nameFilmSearch">
+     <p>${film.original_title}</p>
+     </div>
+     </div>`;
+    html += resSearch;
+  });
+  containerSearch.innerHTML = html;
+  footer.style.top = `${
+    mainSearch.clientHeight + mainSearch.clientWidth / 2
+  }px`;
+  if (html.length != 0) {
+    getDataSearch();
+  }
+};
+const getDataSearch = async () => {
+  const FIlm = await document.querySelectorAll(".FilmSearch");
+  FIlm.forEach((v) => {
+    v.addEventListener("click", async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${v.dataset["id"]}?api_key=df3bdd5a174cac305c5d71d51733fff7`,
+          {
+            method: "GET",
+          }
+        );
+
+        let hasilRes = await response.json();
+        const response2 = await fetch(
+          `https://www.omdbapi.com/?apikey=b1b4d324&i=${hasilRes.imdb_id}`,
+          {
+            method: "GET",
+          }
+        );
+        let hasilRes2 = await response2.json();
+        RealContainerDetails.style.display = "block";
+        if (hasilRes2) {
+          let getMinutess = parseInt(hasilRes2.Runtime.slice(0, 3));
+          let hours = Math.round(getMinutess / 60);
+          let minutes = hours % 60;
+          let mydetailFilms = `<div class="containerDisplayDetails">
+             <div class="DetailsFilms">
+               <div class="closeDetailsFilms">
+                 <div class="imgCloseDetails">
+                   <img src="./src/img/close.png" alt="close.png" class="closeDetails" onclick="closeData()">
+                 </div>
+               </div>
+               <div class="imgFilms">
+                 <div class="thisImgFilms">
+                   <img src=${hasilRes2.Poster} alt="${hasilRes2.Poster}">
+                 </div>
+               </div>
+               <div class="ListDetails">
+                 <div class="JudulFilms">
+                   <h3>${hasilRes.original_title}</h3>
+                 </div>
+                 <div class="storyLine">
+                   <div class="textStoryLine">
+                     <p>Storyline</p>
+                   </div>
+                   <div class="deskripsiDetails">
+                     <p>${hasilRes.overview}</p>
+                   </div>
+                 </div>
+                 <div class="ListDeskripsi">
+                 <div class="Director">
+                   <div class="LabelDirector"><p>Director</p></div>
+                   <div class="nameDirector"><p>: ${
+                     hasilRes2.Director
+                   } </p></div>
+                 </div>
+                 <div class="Reales">
+                   <div class="labelReales"><p>Reales</p></div>
+                   <div class="dateReales"><p>: ${hasilRes2.Released}</p></div>
+                 </div>
+                 <div class="Writer">
+                   <div class="labelWriter"><p>Writer</p></div>
+                   <div class="nameWriter"><p>: ${hasilRes2.Writer}</p></div>
+                 </div>
+                 <div class="Genre">
+                   <div class="labelGenre">Genre</div>
+                   <div class="nameGenre"><p>: ${hasilRes2.Genre}</p></div>
+                 </div>
+                 <div class="Production">
+                   <div class="labelProduction"><p>Production companies</p></div>
+                   <div class="nameProduction"><p>: ${
+                     hasilRes.production_companies[0].name
+                   }</p></div>
+                 </div>
+                 <div class="Duration">
+                   <div class="labelDuration"><p>Duration</p></div>
+                   <div class="nameDuration"><p>: ${hours}H ${minutes}m</p></div>
+                 </div>
+                 <div class="Rate">
+                   <div class="labelRate"><p>Rate</p></div>
+                   <div class="nameRate"><p>: ${hasilRes.vote_average
+                     .toLocaleString()
+                     .slice(0, 3)}/10</p></div>
+                 </div>
+               </div>
+                 <div class="ButtonLikeAndDislike">
+                   <div class="buttonLike">
+                     <button type="button" class="like" onclick="myLike()">
+                       <div class="thumbLike"><img src="./src/img/like-21-color.png" alt="" class="unLike">
+                       <img src="./src/img/like-21.png" alt="" class="doneLike">
+                       </div>
+                       <div class="textLike">Like</div>
+                     </button>
+                   </div>
+                   <div class="buttonDislike">
+                     <button type="button" class="dislike" onclick="myDislike()">
+                         <div class="thumbDislike">
+                         <img src="./src/img/like-21-color.png" alt="dislike" class="unDislike">
+                         <img src="./src/img/like-21.png" alt="dislike" class="doneDislike">
+                       </div>
+                       <div class="textDislike">Dislike</div>
+                       </button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>`;
+          RealContainerDetails.innerHTML = mydetailFilms;
+          return hasilRes2;
+        }
+        return hasilRes;
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
+};

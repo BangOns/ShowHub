@@ -79,7 +79,8 @@
 .Film,
 .Film2,
 .Film3,
-.Film4 {
+.Film4,
+.FilmSearch {
   width: 200px;
   height: 340px;
   display: flex;
@@ -90,13 +91,15 @@
 .Film :hover,
 .Film2 :hover,
 .Film3 :hover,
-.Film4:hover {
+.Film4:hover,
+.FilmSearch:hover {
   cursor: pointer;
 }
 .imgFilm > img,
 .imgFilm2 > img,
 .imgFilm3 > img,
-.imgFilm4 > img {
+.imgFilm4 > img,
+.imgFilmSearch > img {
   width: 190px;
   height: 260px;
   border-radius: 20px;
@@ -128,7 +131,8 @@
 .nameFilm,
 .nameFilm2,
 .nameFilm3,
-.nameFilm4 {
+.nameFilm4,
+.nameFilmSearch {
   width: 180px;
   height: 35px;
   display: flex;
@@ -141,7 +145,8 @@
 .nameFilm > p,
 .nameFilm2 > p,
 .nameFilm3 > p,
-.nameFilm4 > p {
+.nameFilm4 > p,
+.nameFilmSearch > p {
   font-size: 10px;
   text-align: center;
   font-weight: 700;
@@ -327,7 +332,8 @@
   .Film,
   .Film2,
   .Film3,
-  .Film4 {
+  .Film4,
+  .FilmSearch {
     width: 140px;
     height: 300px;
   }
@@ -335,21 +341,24 @@
   .imgFilm > img,
   .imgFilm2 > img,
   .imgFilm3 > img,
-  .imgFilm4 > img {
+  .imgFilm4 > img,
+  .imgFilmSearch > img {
     width: 160px;
     height: 230px;
   }
   .nameFilm,
   .nameFilm2,
   .nameFilm3,
-  .nameFilm4 {
+  .nameFilm4,
+  .nameFilmSearch {
     width: 160px;
     height: 35px;
   }
   .nameFilm > p,
   .nameFilm2 > p,
   .nameFilm3 > p,
-  .nameFilm4 > p {
+  .nameFilm4 > p,
+  .nameFilmSearch > p {
     font-size: 10px;
 
     letter-spacing: 0;

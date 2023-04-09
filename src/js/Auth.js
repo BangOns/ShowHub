@@ -41,6 +41,7 @@ userRegister.addEventListener("submit", (e) => {
     inputConfPasswordRegister.value = "";
     inputNumberRegister.value = "";
     KotakRegister.style.display = "none";
+    window.location.reload();
   }
 });
 
@@ -62,6 +63,7 @@ userLogin.addEventListener("submit", (e) => {
     let myUser = { nama: FIndUserName.nama, pw: FIndUserPw.pw };
     localStorage.setItem("LoginUser", JSON.stringify(myUser));
     KotakSignIn2.style.display = "none";
+    window.location.reload();
   } else {
     alert("Akun anda tidak ditemui Mohon registrasi dahulu");
     inputNameLogin.value = "";
@@ -129,6 +131,7 @@ Logout[0].addEventListener("click", () => {
   containerLogin.style.display = "none";
   displayBurgerNotLogin.style.display = "flex";
   displayBurgerLogin.style.display = "none";
+  window.location.reload();
 });
 
 Logout[1].addEventListener("click", () => {
@@ -137,6 +140,7 @@ Logout[1].addEventListener("click", () => {
   containerLogin.style.display = "none";
   displayBurgerNotLogin.style.display = "flex";
   displayBurgerLogin.style.display = "none";
+  window.location.reload();
 });
 
 function getLocaleStorage() {

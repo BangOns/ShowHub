@@ -27,6 +27,7 @@ body {
   padding-right: 29px;
   position: fixed;
   z-index: 9999999;
+  box-shadow: 0px 0px 10px 3px rgba(120, 122, 145, 0.3);
 }
 .ShowHub {
   width: 15%;
@@ -37,10 +38,13 @@ body {
   display: flex;
   align-items: center;
 }
-.ShowHub > .textShowHub a {
+.ShowHub > .textShowHub p {
   text-decoration: none;
   font-size: 21px;
   font-weight: 700;
+}
+.textShowHub p:hover {
+  cursor: pointer;
 }
 .attr {
   width: 38%;
@@ -98,6 +102,9 @@ body {
 }
 .iconSearch {
   width: 9%;
+}
+.iconSearch:hover {
+  cursor: pointer;
 }
 .iconSearch img {
   width: 14px;
@@ -525,7 +532,7 @@ body {
   .textShowHub {
     justify-content: center;
   }
-  .ShowHub > .textShowHub a {
+  .ShowHub > .textShowHub p {
     font-size: 20px;
   }
   .search {

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./src/css/main_footer.css" />
     <link rel="stylesheet" href="./src/css/signup_signin.css">
     <link rel="stylesheet" href="./src/css/detailsFilm.css">
+    <link rel="stylesheet" href="./src/css/mainSearch.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -19,7 +20,7 @@
     <nav class="navBar" >
       <div class="ShowHub">
         <div class="textShowHub">
-          <a href="#">MyMovie</a>
+          <p class="myMovie">MyMovie</p>
         </div>
       </div>
       <div class="attr">
@@ -41,9 +42,9 @@
       <div class="search">
         <div class="kotakSearch">
           <div class="input">
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" class="inputSearch" />
           </div>
-          <div class="iconSearch">
+          <div class="iconSearch" role="button">
             <img src="./src/img/search.png" alt="search" />
           </div>
         </div>
@@ -96,7 +97,7 @@
         <div class="Logged">
           <div class="ListsignIn buttonLogin">
             <img src="./src/img/profil.png" class="fotoPP" alt="">
-            <p class="thisSignInLogin" >Rizki Nur Fadhilla</p>
+            <p class="thisSignInLogin" >NULL</p>
           </div>
           <div class="ListsignUp">
             <img src="./src/img/door.png" alt="">
@@ -179,6 +180,17 @@
         <div class="swiper-button-prev prevIndonesia"></div>
       </div>
     </main>
+      <!-- Main Search -->
+  <main class="mainSearch">
+    <div class="textSearch">
+      <p>Film Results "Horror" </p>
+    </div>
+<div class="isiSearch">
+  <div class="ListSearchFilm">
+      
+  </div>
+</div>
+  </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="ContactUs">
@@ -366,8 +378,8 @@
     </div>
     <!-- Container Display Details -->
     <div class="RealContainerDisplayDetails">
-
   </div>
+
     <script src="./src/js/index.js"></script>
     <script src="./src/js/Auth.js"></script>
     <script src="./src/js/Scroll.js"></script>
